@@ -1,12 +1,14 @@
 <!doctype html>
+<!-- Fichier genere par scripts/rendu-site.py : editer site/contenu.json, ne pas modifier a la main -->
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pince, app native pour Mac</title>
-  <meta name="description" content="Gardez plusieurs copies sous la main. Pince est une app native pour macOS : vos données restent sur votre Mac, sans compte ni télémétrie. Gratuite et open source.">
+  <meta name="description" content="Gardez plusieurs copies sous la main. Pince est une app native pour macOS, gratuite et open source : vos données restent sur votre Mac.">
   <meta name="theme-color" content="#2F6FEB">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="canonical" href="https://pince.vialet.app/">
   <meta property="og:type" content="website">
@@ -16,116 +18,132 @@
   <meta property="og:image" content="https://pince.vialet.app/og.png">
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/style.css">
-  <script src="/app.js" defer></script>
+  <link rel="preload" href="/vialet/fonts/BricolageGrotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/vialet/vialet.css?v=dfd0645d">
+  <style>:root{--accent:#2F6FEB;--accent-bg:#2F6FEB;--accent-deep:#00001F;--accent-pale:#EBF2FF;--accent-night:#0F1A2F;--night-ink:#C4D8FD}</style>
+  
+  <script src="/vialet/vialet.js?v=66433dce" defer></script>
+  
 </head>
-<body>
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Pince, haut de page">
-      <img src="/icone-256.png" alt="" width="30" height="30">
-      <span>Pince<i>.</i></span>
-    </a>
-    <nav aria-label="Navigation principale">
-      <a href="#fonctions">Fonctions</a>
-      <a href="#installer">Installer</a>
-      <a href="#confidentialite">Confidentialité</a>
-      <a href="#code">Code source</a>
-      <a class="gh" href="https://github.com/avialet/pince" rel="noopener">GitHub</a>
-    </nav>
-    <a class="btn btn-small" href="#installer" data-download>Télécharger</a>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <img class="hero-icon" src="/icone-256.png" alt="" width="128" height="128">
-      <p class="eyebrow">Gratuit · Open source · macOS 26</p>
-      <h1><span class="grad">Pince</span></h1>
-      <p class="lead">Gardez plusieurs copies sous la main.</p>
-      <div class="cta">
-        <a class="btn" href="https://github.com/avialet/pince/releases/latest" data-download>
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M17.05 12.04c-.03-2.6 2.12-3.85 2.22-3.91-1.21-1.77-3.09-2.01-3.76-2.04-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.89-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.78 1.3 10.33.86 1.25 1.89 2.65 3.24 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.38.81 1.4-.02 2.28-1.27 3.13-2.52.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.7-1.04-2.72-4.13zM14.47 4.4c.72-.87 1.2-2.07 1.07-3.27-1.03.04-2.28.69-3.02 1.55-.66.77-1.24 2-1.09 3.17 1.15.09 2.32-.58 3.04-1.45z"/></svg>
-          <span data-download-label>Télécharger pour Mac</span>
-        </a>
-        <a class="btn btn-ghost" href="#fonctions">En savoir plus</a>
-      </div>
-      <p class="fine" data-download-meta>Apple Silicon · macOS 26 Tahoe ou plus récent</p>
-    </section>
-
-    <section id="fonctions" class="features">
-      <h2 class="section-title">Ce que fait Pince</h2>
-      <div class="grid">
-        <article class="card">
-          <span class="ico">&#8629;</span>
-          <h3>Un raccourci, un panneau, ↩</h3>
-          <p>⌃⇧Espace ouvre un panneau par-dessus n'importe quelle app. Quelques lettres, les flèches, ↩ : l'élément est de retour dans le presse-papiers, ou collé directement si vous le demandez.</p>
-        </article>
-        <article class="card">
-          <span class="ico">&#9673;</span>
-          <h3>Il reconnaît ce qu'il garde</h3>
-          <p>Lien, adresse, couleur, JSON, code, chemin, image, fichiers : chaque copie est reconnue et affichée en conséquence, avec l'app d'origine. Une couleur montre sa pastille, un JSON se formate.</p>
-        </article>
-        <article class="card">
-          <span class="ico">&#8962;</span>
-          <h3>Discret et local</h3>
-          <p>L'historique est un fichier SQLite sur votre Mac. Les copies marquées confidentielles par les gestionnaires de mots de passe ne sont jamais enregistrées, et vous pouvez exclure des apps.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="installer" class="install">
-      <h2 class="section-title">Installer Pince</h2>
-      <p class="sub">L'app est signée ad hoc, sans certificat Apple Developer : au premier lancement, macOS 26 demande une confirmation. Quatre étapes, une seule fois.</p>
-      <ol class="steps">
-        <li><b>Ouvrez le DMG</b>, glissez Pince dans le dossier Applications, puis double-cliquez sur l'app.</li>
-        <li>Dans la boîte « Apple n'a pas pu vérifier… », cliquez <b>« Terminé »</b> (pas « Placer dans la corbeille »).</li>
-        <li>Ouvrez <b>Réglages Système › Confidentialité et sécurité</b>, descendez jusqu'à « Pince a été bloqué… », cliquez <b>« Ouvrir quand même »</b>, authentifiez-vous, puis « Ouvrir ».</li>
-        <li><b>C'est tout.</b> Cette manipulation n'est demandée qu'une seule fois par téléchargement ; ensuite Pince s'ouvre normalement.</li>
-      </ol>
-      <a class="btn btn-big" href="https://github.com/avialet/pince/releases/latest" data-download>
-        <span data-download-label>Télécharger pour Mac</span>
-      </a>
-      <p class="fine" data-download-meta>Apple Silicon · macOS 26 Tahoe ou plus récent</p>
-
-      <details class="faq">
-        <summary>Pourquoi cet avertissement au premier lancement ?</summary>
-        <p>Pince n'est ni signé avec un certificat Apple Developer ni notarisé, alors macOS bloque le premier lancement. Depuis macOS 15, l'ancien contournement « Contrôle-clic, puis Ouvrir » n'existe plus pour les apps non notarisées : le passage par Réglages Système est le seul chemin.</p>
-      </details>
-      <details class="faq">
-        <summary>Comment vérifier le fichier téléchargé ?</summary>
-        <p>Chaque version publie son empreinte SHA-256. Dans le dossier du téléchargement : <code>shasum -a 256 -c Pince-X.Y.Z.dmg.sha256</code>.</p>
-      </details>
-    </section>
-
-    <section id="confidentialite" class="privacy">
-      <h2 class="section-title">Confidentialité</h2>
-      <p class="sub">Pince travaille en local, sur votre Mac, et rien d'autre.</p>
-      <ul class="ticks">
-        <li>Vos données restent sur votre Mac</li>
-        <li>Aucun compte, aucune inscription</li>
-        <li>Aucune télémétrie, aucun traceur</li>
-        <li>Un seul appel réseau : la lecture de la dernière version publiée sur GitHub, désactivable dans les réglages</li>
-      </ul>
-    </section>
-
-    <section id="code" class="source">
-      <h2 class="section-title">Code source</h2>
-      <p class="sub">Pince est publié sous licence MIT. Le code, les versions et le suivi des soucis sont sur GitHub.</p>
-      <a class="btn btn-ghost" href="https://github.com/avialet/pince" rel="noopener">github.com/avialet/pince</a>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div>
-      <a class="brand" href="#top"><img src="/icone-256.png" alt="" width="26" height="26"><span>Pince<i>.</i></span></a>
-      <p>Un projet d’<a href="https://app.vialet.app">Aurélien Vialet</a>. Gratuit, sous licence <a href="https://github.com/avialet/pince/blob/main/LICENSE" rel="noopener">MIT</a>.</p>
+<body data-app="Pince" data-repo="avialet/pince" data-display="Pince">
+<header class="affiche">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="marque" href="/"><span class="plaque"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="0" y="0" width="100" height="100" rx="22.45" fill="#FFFFFF"/><path d="M 20 18 L 40 50 L 20 82 M 80 18 L 60 50 L 80 82" transform="translate(20 20) scale(0.6)" fill="none" stroke="#2F6FEB" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Pince</span></a>
+    <ul>
+      <li><a href="#fonctions">Fonctions</a></li>
+      <li><a href="#installer">Installer</a></li>
+      <li><a href="https://github.com/avialet/pince" rel="noopener">Code source</a></li>
+    </ul>
+  </nav>
+  <div class="affiche-corps">
+    <h1>Gardez plusieurs copies<br>sous la main.</h1>
+    <div class="affiche-texte">
+      <p>Pince retient tout ce que vous copiez, texte, liens, images, fichiers, et vous le rend en un raccourci.</p>
+      <p class="actions">
+        <a class="btn" href="https://github.com/avialet/pince/releases/latest" data-download>Télécharger</a>
+        <a class="lien" href="https://github.com/avialet/pince" rel="noopener">Voir le code</a>
+      </p>
     </div>
-    <nav aria-label="Liens">
-      <a href="https://github.com/avialet/pince" rel="noopener">Code source</a>
-      <a href="https://github.com/avialet/pince/releases" rel="noopener">Versions</a>
-      <a href="https://github.com/avialet/pince/issues" rel="noopener">Signaler un souci</a>
-      <a href="https://app.vialet.app">Toutes les apps</a>
-    </nav>
-    <p class="copy">© 2026 Aurélien Vialet · MIT · Aucun cookie, aucun traceur.</p>
-  </footer>
+    <picture class="affiche-fenetre">
+      <source media="(prefers-color-scheme: dark)" srcset="/img/fenetre-sombre.webp 1x, /img/fenetre-sombre@2x.webp 2x">
+      <img src="/img/fenetre-clair.webp" srcset="/img/fenetre-clair@2x.webp 2x" width="1000" height="720" alt="La fenêtre de Pince, l&#x27;historique des copies filtré par type" fetchpriority="high">
+    </picture>
+  </div>
+</header>
+
+<main>
+  <section class="fiche" aria-label="Fiche de Pince">
+    <dl>
+      <div><dt>Version</dt><dd data-fiche-version>la dernière publiée</dd></div>
+      <div><dt>Taille</dt><dd data-fiche-taille>quelques Mo</dd></div>
+      <div><dt>Système</dt><dd>macOS 26, Apple Silicon</dd></div>
+      <div><dt>Licence</dt><dd>MIT</dd></div>
+      <div><dt>Empreinte</dt><dd><a data-fiche-sha href="https://github.com/avialet/pince/releases/latest" rel="noopener">SHA-256 sur GitHub</a></dd></div>
+    </dl>
+  </section>
+
+  
+
+  <section id="fonctions" class="fonctions" aria-label="Ce que fait Pince">
+    
+    
+    <article class="fonction fonction--gauche">
+      <div class="fonction-texte">
+        <h2>Un raccourci, un panneau, entrée</h2>
+        <p>⌃⇧Espace ouvre un panneau par-dessus n&#x27;importe quelle app. Quelques lettres, les flèches, puis ↩ : l&#x27;élément revient dans le presse-papiers, ou se colle directement.</p>
+      </div>
+      <picture class="fonction-image">
+        <source media="(prefers-color-scheme: dark)" srcset="/img/detail-sombre.webp 1x, /img/detail-sombre@2x.webp 2x">
+        <img src="/img/detail-clair.webp" srcset="/img/detail-clair@2x.webp 2x" width="1000" height="677" alt="Le panneau de Pince ouvert par le raccourci global, avec la recherche et les dernières copies" loading="lazy">
+      </picture>
+    </article>
+    
+    
+    
+    
+    <article class="fonction">
+      <div class="fonction-texte">
+        <h2>Il reconnaît ce qu&#x27;il garde</h2>
+        <p>Lien, adresse, couleur, JSON, code, chemin, image, fichiers : chaque copie est affichée pour ce qu&#x27;elle est, avec l&#x27;app d&#x27;origine et son ancienneté.</p>
+      </div>
+      <picture class="fonction-image">
+        <source media="(prefers-color-scheme: dark)" srcset="/img/fenetre-sombre.webp 1x, /img/fenetre-sombre@2x.webp 2x">
+        <img src="/img/fenetre-clair.webp" srcset="/img/fenetre-clair@2x.webp 2x" width="1000" height="720" alt="La fenêtre de Pince : les copies reconnues, liens, couleurs, JSON et fichiers" loading="lazy">
+      </picture>
+    </article>
+    
+    
+    
+  </section>
+
+  
+  
+
+  <section id="installer" class="installer">
+    <h2>Installer Pince</h2>
+    <p>Pince est signée sans certificat Apple Developer : au premier lancement, macOS demande une confirmation. Une seule fois.</p>
+    <ol class="etapes">
+      <li><h3>Ouvrez le DMG</h3><p>Glissez Pince dans Applications, puis double-cliquez sur l'app.</p></li>
+      <li><h3>Cliquez « Terminé »</h3><p>Dans la boîte « Apple n'a pas pu vérifier… », pas « Placer dans la corbeille ».</p></li>
+      <li><h3>Ouvrez quand même</h3><p>Réglages Système, Confidentialité et sécurité : en bas, « Pince a été bloqué », puis « Ouvrir quand même ».</p></li>
+      <li><h3>C'est fait</h3><p>Les lancements suivants sont normaux, et les mises à jour s'installent depuis l'app.</p></li>
+    </ol>
+    <p class="actions"><a class="btn" href="https://github.com/avialet/pince/releases/latest" data-download>Télécharger</a></p>
+    
+    <details class="question">
+      <summary>Pourquoi cet avertissement au premier lancement ?</summary>
+      <div>Pince n'est ni signée avec un certificat Apple Developer ni notarisée, alors macOS bloque le premier lancement. Depuis macOS 15, le contournement « Contrôle-clic, puis Ouvrir » n'existe plus : le passage par Réglages Système est le seul chemin.</div>
+    </details>
+    
+    <details class="question">
+      <summary>Comment vérifier le fichier téléchargé ?</summary>
+      <div>Chaque version publie son empreinte SHA-256. Dans le dossier du téléchargement : <code>shasum -a 256 -c Pince-X.Y.Z.dmg.sha256</code>.</div>
+    </details>
+    
+  </section>
+
+  <section class="duo" aria-label="Confidentialité et code source">
+    <div>
+      <h2>Chez vous</h2>
+      <p>L&#x27;historique est un fichier SQLite sur votre Mac, les images sont rangées à côté. Les copies que les gestionnaires de mots de passe marquent confidentielles ne sont jamais enregistrées, et vous pouvez exclure des apps. Le seul appel réseau est la lecture de la dernière version publiée sur GitHub, désactivable dans les réglages.</p>
+      <p class="donnees"><code>~/Library/Application Support/Pince/pince.sqlite</code></p>
+    </div>
+    <div>
+      <h2>Ouvert</h2>
+      <p>Pince est publiée sous licence MIT. Le code, les versions et le suivi des soucis sont sur GitHub.</p>
+      <p><a class="lien" href="https://github.com/avialet/pince" rel="noopener">github.com/avialet/pince</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="pied">
+  <a class="marque" href="https://vialet.app"><span class="plaque"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><rect x="0" y="0" width="100" height="100" rx="22.45" fill="#2F6FEB"/><path d="M 20 18 L 40 50 L 20 82 M 80 18 L 60 50 L 80 82" transform="translate(20 20) scale(0.6)" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Un projet d'Aurélien Vialet</span></a>
+  <ul>
+    <li><a href="https://github.com/avialet/pince/releases" rel="noopener">Versions</a></li>
+    <li><a href="https://github.com/avialet/pince/issues" rel="noopener">Signaler un souci</a></li>
+    <li><a href="https://vialet.app">Toutes les apps</a></li>
+  </ul>
+  <p>© 2026 Aurélien Vialet, licence MIT. Aucun cookie, aucun traceur.</p>
+</footer>
 </body>
 </html>

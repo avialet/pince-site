@@ -1,0 +1,41 @@
+{
+  "app": "Pince",
+  "affiche": "Pince",
+  "domaine": "pince.vialet.app",
+  "depot": "avialet/pince",
+  "accroche": "Gardez plusieurs copies sous la main.",
+  "titre": ["Gardez plusieurs copies", "sous la main."],
+  "sous_titre": "Pince retient tout ce que vous copiez, texte, liens, images, fichiers, et vous le rend en un raccourci.",
+  "hero": { "image": "fenetre", "alt": "La fenêtre de Pince, l'historique des copies filtré par type" },
+  "fonctions": [
+    {
+      "titre": "Un raccourci, un panneau, entrée",
+      "texte": "⌃⇧Espace ouvre un panneau par-dessus n'importe quelle app. Quelques lettres, les flèches, puis ↩ : l'élément revient dans le presse-papiers, ou se colle directement.",
+      "image": "detail",
+      "alt": "Le panneau de Pince ouvert par le raccourci global, avec la recherche et les dernières copies"
+    },
+    {
+      "titre": "Il reconnaît ce qu'il garde",
+      "texte": "Lien, adresse, couleur, JSON, code, chemin, image, fichiers : chaque copie est affichée pour ce qu'elle est, avec l'app d'origine et son ancienneté.",
+      "image": "fenetre",
+      "alt": "La fenêtre de Pince : les copies reconnues, liens, couleurs, JSON et fichiers"
+    }
+  ],
+  "captures": [
+    { "nom": "fenetre", "source": "base-1" },
+    { "nom": "detail", "source": "base-2" }
+  ],
+  "confidentialite": "L'historique est un fichier SQLite sur votre Mac, les images sont rangées à côté. Les copies que les gestionnaires de mots de passe marquent confidentielles ne sont jamais enregistrées, et vous pouvez exclure des apps. Le seul appel réseau est la lecture de la dernière version publiée sur GitHub, désactivable dans les réglages.",
+  "donnees": "~/Library/Application Support/Pince/pince.sqlite",
+  "faq": [
+    {
+      "q": "Pourquoi cet avertissement au premier lancement ?",
+      "r": "Pince n'est ni signée avec un certificat Apple Developer ni notarisée, alors macOS bloque le premier lancement. Depuis macOS 15, le contournement « Contrôle-clic, puis Ouvrir » n'existe plus : le passage par Réglages Système est le seul chemin."
+    },
+    {
+      "q": "Comment vérifier le fichier téléchargé ?",
+      "r": "Chaque version publie son empreinte SHA-256. Dans le dossier du téléchargement : <code>shasum -a 256 -c Pince-X.Y.Z.dmg.sha256</code>."
+    }
+  ],
+  "libres": { "apres_hero": "", "apres_fonctions": "", "avant_installer": "" }
+}
